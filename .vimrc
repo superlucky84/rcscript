@@ -89,6 +89,9 @@ map <F10> :set tags=/usr/local/plug/trunk/tags<CR>
 nmap <leader>cp :set paste<CR>
 nmap <leader>np :set nopaste<CR>
 
+nmap <leader>ct2 :set ts=2 sw=2 sts=2<CR>
+nmap <leader>ct4 :set ts=4 sw=4 sts=4<CR>
+
 let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
 
 
