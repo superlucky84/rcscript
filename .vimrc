@@ -93,6 +93,7 @@ nmap <leader>ct2 :set ts=2 sw=2 sts=2<CR>
 nmap <leader>ct4 :set ts=4 sw=4 sts=4<CR>
 
 let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
+let @c='iconsole.log();h'
 
 
 "vim 6.*
