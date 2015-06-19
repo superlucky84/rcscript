@@ -22,7 +22,7 @@ filetype indent plugin on
 "colo black
 
 "window
-set guifont=monaco:h14
+set guifont=monaco:h12
 colo jellybeans
 "colo dusk
 "colo chocolateliquor
