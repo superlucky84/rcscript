@@ -48,3 +48,5 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 # append to bash_history if Terminal.app quits
 shopt -s histappend
+# add node path
+export PATH="/usr/local/Cellar/node/6.0.0/bin:$PATH"
