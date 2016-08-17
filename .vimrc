@@ -98,10 +98,13 @@ nmap <leader>et2 :%s/\t/  /g<CR>
 nmap <leader>etr4 :%s/    /\t/g<CR>
 nmap <leader>etr2 :%s/  /\t/g<CR>
 
+
 "indentguide
-hi IndentGuidesOdd  guibg=black   ctermbg=3
-hi IndentGuidesEven guibg=gray ctermbg=4
-nmap <leader>g :IndentGuidesToggle<CR>
+hi IndentGuidesOdd  guibg=darkgrey   ctermbg=3
+hi IndentGuidesEven guibg=black   ctermbg=3
+let g:indent_guides_start_level=1
+let g:indent_guides_guide_size=1
+
 
 
 let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
