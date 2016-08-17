@@ -101,7 +101,7 @@ nmap <leader>etr2 :%s/  /\t/g<CR>
 
 "indentguide
 hi IndentGuidesOdd  guibg=darkgrey   ctermbg=3
-hi IndentGuidesEven guibg=black   ctermbg=3
+hi IndentGuidesEven guibg=darkgrey   ctermbg=3
 let g:indent_guides_start_level=1
 let g:indent_guides_guide_size=1
 
