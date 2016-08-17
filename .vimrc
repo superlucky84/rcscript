@@ -86,6 +86,11 @@ nmap <leader>acl :AlignCtrl l<CR>
 "vim 7.*
 nmap <leader>r :NERDTreeToggle<CR>
 map <F10> :set tags=/usr/local/plug/trunk/tags<CR>
+"map <Leader>t <ESC>:FufFile **/<CR>
+"map <Leader>ff <ESC>:FufFile<CR>
+"map <Leader>f <ESC>:FufFile<CR>
+"map <Leader>b <ESC>:FufBuffer<CR>
+
 
 nmap <leader>cp :set paste<CR>
 nmap <leader>np :set nopaste<CR>
@@ -101,10 +106,10 @@ nmap <leader>etr2 :%s/  /\t/g<CR>
 
 "indentguide
 hi IndentGuidesOdd  guibg=darkgrey   ctermbg=3
-hi IndentGuidesEven guibg=darkgrey   ctermbg=3
+hi IndentGuidesEven guibg=white   ctermbg=3
 let g:indent_guides_start_level=1
 let g:indent_guides_guide_size=1
-
+nmap <leader>g :IndentGuidesToggle<CR>
 
 
 let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
