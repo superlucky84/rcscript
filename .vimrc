@@ -12,6 +12,7 @@ Plugin 'Align'
 Plugin 'EasyMotion'
 Plugin 'jellybeans.vim'
 Plugin 'snipMate'
+Plugin 'Indent-Guides'
 
 filetype indent plugin on
 
@@ -96,6 +97,12 @@ nmap <leader>et4 :%s/\t/    /g<CR>
 nmap <leader>et2 :%s/\t/  /g<CR>
 nmap <leader>etr4 :%s/    /\t/g<CR>
 nmap <leader>etr2 :%s/  /\t/g<CR>
+
+"indentguide
+hi IndentGuidesOdd  guibg=black   ctermbg=3
+hi IndentGuidesEven guibg=gray ctermbg=4
+nmap <leader>g :IndentGuidesToggle<CR>
+
 
 let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
 let @c='iconsole.log();h'
