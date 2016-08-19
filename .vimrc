@@ -24,6 +24,9 @@ filetype indent plugin on
 
 "window
 set guifont=monaco:h12
+"set guifont=UbuntuMono\ 11
+"set guifont=굴림체:h10
+
 colo jellybeans
 "colo dusk
 "colo chocolateliquor
