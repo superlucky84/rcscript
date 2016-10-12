@@ -1,5 +1,7 @@
 syntax on  
 
+" for window
+"set rtp+=C:\Users\jinwoo\vim\bundle\vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
