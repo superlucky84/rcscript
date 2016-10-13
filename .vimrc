@@ -127,4 +127,8 @@ let @c='iconsole.log();h'
 "let g:treeExplVertical = 1
 "nmap <F11> :VSTreeExplore<CR>
 
+"window
+"nmap <leader>es :!.\node_modules\.bin\eslint %<CR>
 
+"unix
+nmap <leader>es :!./node_modules/.bin/eslint %<CR>
