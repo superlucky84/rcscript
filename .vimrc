@@ -15,6 +15,7 @@ Plugin 'EasyMotion'
 Plugin 'jellybeans.vim'
 Plugin 'snipMate'
 Plugin 'Indent-Guides'
+Plugin 'isRuslan/vim-es6'
 
 filetype indent plugin on
 
