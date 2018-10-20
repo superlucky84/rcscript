@@ -44,15 +44,14 @@
   :ensure t
   :init
   :config
-  (global-set-key (kbd "C-c r") 'neotree-toggle))
+  (global-set-key (kbd "C-c tf") 'neotree-toggle))
 
 (use-package multi-term
   :ensure t
   :init
   :config
   (require 'multi-term)
-  (global-set-key (kbd "C-c mn") 'multi-term)
-  (global-set-key (kbd "C-c mt") 'multi-term-dedicated-toggle))
+  (global-set-key (kbd "C-c tm") 'multi-term-dedicated-toggle))
 
 (use-package flycheck
   :ensure t
@@ -117,6 +116,7 @@
 (setq-default typescript-indent-level 2)
 (setq-default c-basic-offset 2)
 (global-linum-mode t)
+(global-set-key (kbd "C-c tn") 'linum-mode)
 
 
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
@@ -156,5 +156,3 @@
 
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
 (add-hook 'vue-mode-hook 'flycheck-mode)
-
-
