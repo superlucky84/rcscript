@@ -50,6 +50,8 @@
   :ensure t
   :init
   :config
+  (with-eval-after-load 'flycheck
+    (flycheck-add-mode 'javascript-eslint 'typescript-mode))
   (global-set-key (kbd "C-c el") 'flycheck-list-errors))
 
 (use-package projectile
@@ -65,6 +67,19 @@
   :init
   :config
   (require 'evil-magit))
+
+(use-package typescript-mode
+  :ensure t
+  :init
+  :config
+  (require 'evil-magit))
+
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
 
 
 (use-package rg
@@ -106,8 +121,31 @@
 (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
 (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
 
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+;; formats the buffer before saving
+;; (add-hook 'before-save-hook 'tide-format-before-save)
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+(add-hook 'typescript-mode-hook 'tide-mode)
+(add-hook 'typescript-mode-hook 'flycheck-mode)
+
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook 'flycheck-mode)
 
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
 (add-hook 'vue-mode-hook 'flycheck-mode)
+
