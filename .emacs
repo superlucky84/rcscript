@@ -46,6 +46,14 @@
   :config
   (global-set-key (kbd "C-c r") 'neotree-toggle))
 
+(use-package multi-term
+  :ensure t
+  :init
+  :config
+  (require 'multi-term)
+  (global-set-key (kbd "C-c mn") 'multi-term)
+  (global-set-key (kbd "C-c mt") 'multi-term-dedicated-toggle))
+
 (use-package flycheck
   :ensure t
   :init
@@ -148,4 +156,5 @@
 
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
 (add-hook 'vue-mode-hook 'flycheck-mode)
+
 
