@@ -15,6 +15,7 @@
 (use-package evil
   :ensure t
   :init
+  (setq scroll-conservatively 10000)
   (setq evil-want-C-u-scroll t)
   :config
   (evil-mode t))
@@ -107,7 +108,6 @@
   :ensure t)
 (use-package swiper-helm
   :ensure t)
-
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
