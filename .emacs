@@ -51,7 +51,7 @@
   :init
   :config
   (require 'multi-term)
-  (global-set-key (kbd "C-c tm") 'multi-term-dedicated-toggle))
+  (global-set-key (kbd "C-c tt") 'multi-term-dedicated-toggle))
 
 (use-package flycheck
   :ensure t
@@ -76,10 +76,7 @@
   (require 'evil-magit))
 
 (use-package typescript-mode
-  :ensure t
-  :init
-  :config
-  (require 'evil-magit))
+  :ensure t)
 
 (use-package tide
   :ensure t
