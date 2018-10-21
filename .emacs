@@ -79,7 +79,8 @@
   :ensure t
   :init
   :config
-  (require 'prettier-js))
+  (require 'prettier-js)
+  (global-set-key (kbd "C-c ep") 'prettier-js-mode))
 
 (use-package typescript-mode
   :ensure t)
