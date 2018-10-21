@@ -75,6 +75,12 @@
   :config
   (require 'evil-magit))
 
+(use-package prettier-js 
+  :ensure t
+  :init
+  :config
+  (require 'prettier-js))
+
 (use-package typescript-mode
   :ensure t)
 
