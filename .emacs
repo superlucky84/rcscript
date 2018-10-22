@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(package-initialize) 
+(package-initialize)
 (when (not (package-installed-p 'use-package))
   (package-refresh-contents)
   (package-install 'use-package))
@@ -17,6 +17,7 @@
   :init
   (setq scroll-conservatively 10000)
   (setq evil-want-C-u-scroll t)
+  (setq evil-want-visual-char-semi-exclusive t)
   :config
   (evil-mode t))
 
@@ -45,7 +46,7 @@
   :ensure t
   :init
   :config
-  (global-set-key (kbd "C-c tf") 'neotree-toggle))
+  (global-set-key (kbd "C-c ft") 'neotree-toggle))
 
 (use-package multi-term
   :ensure t
@@ -53,6 +54,15 @@
   :config
   (require 'multi-term)
   (global-set-key (kbd "C-c tt") 'multi-term-dedicated-toggle))
+
+(use-package markdown-mode
+  :ensure t
+  :init
+  :config
+  (require 'markdown-mode)
+  (add-to-list 'package-archives
+               '("melpa-stable" . "https://stable.melpa.org/packages/"))
+  (package-initialize))
 
 (use-package flycheck
   :ensure t
@@ -76,7 +86,7 @@
   :config
   (require 'evil-magit))
 
-(use-package prettier-js 
+(use-package prettier-js
   :ensure t
   :init
   :config
@@ -93,6 +103,20 @@
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-format-before-save)))
 
+(use-package flymd
+  :ensure t
+  :init
+  :config
+  (require 'flymd)
+  (defun my-flymd-browser-function (url)
+    (let ((process-environment (browse-url-process-environment)))
+      (apply 'start-process
+            (concat "firefox " url)
+            nil
+            "/usr/bin/open"
+            (list "-a" "firefox" url))))
+  (setq flymd-browser-open-function 'my-flymd-browser-function)
+  )
 
 (use-package rg
   :ensure t)
