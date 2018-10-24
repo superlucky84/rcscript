@@ -19,7 +19,8 @@
   (setq evil-want-C-u-scroll t)
   (setq evil-want-visual-char-semi-exclusive t)
   :config
-  (evil-mode t))
+  (evil-mode t)
+  (show-paren-mode t))
 
 (use-package evil-surround
   :ensure t
@@ -121,7 +122,9 @@
 (use-package rg
   :ensure t)
 (use-package helm-rg
-  :ensure t)
+  :init
+  :config
+  (global-set-key (kbd "C-c ss") 'helm-rg))
 (use-package helm-projectile
   :ensure t)
 (use-package counsel
