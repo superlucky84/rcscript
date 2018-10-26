@@ -136,19 +136,6 @@
 (use-package swiper-helm
   :ensure t)
 
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq-default evil-shift-width 4)
-(setq-default js-basic-offset 4)
-(setq web-mode-markup-indent-offset 4)
-(setq js-indent-level 4)
-(setq js4-basic-offset 4)
-(setq nxml-child-indent 4 nxml-attribute-indent 4)
-(setq-default typescript-indent-level 4)
-(setq-default c-basic-offset 4)
-(global-linum-mode t)
-(global-set-key (kbd "C-c tn") 'linum-mode)
-
 (defun reload-dotemacs ()
   "Reload .emacs"
   (interactive)
@@ -159,18 +146,37 @@
   )
 )
 
+(defun open-dotemacs ()
+  "Open .emacs"
+  (interactive)
+  (let (dotemacs-default)
+    (setq dotemacs-default "~/.emacs")
+    (message "Open %s" dotemacs-default)
+    (find-file dotemacs-default)
+  )
+)
+
+(setq step 2)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width step)
+(setq-default evil-shift-width step)
+(setq-default js-basic-offset step)
+(setq web-mode-markup-indent-offset step)
+(setq js-indent-level step)
+(setq js4-basic-offset step)
+(setq nxml-child-indent step nxml-attribute-indent step)
+(setq-default typescript-indent-level step)
+(setq-default c-basic-offset step)
+(global-linum-mode t)
+(global-set-key (kbd "C-c tn") 'linum-mode)
 (global-set-key (kbd "C-c er") 'reload-dotemacs)
-
-
-
+(global-set-key (kbd "C-c ed") 'open-dotemacs)
 
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
-(evil-define-key 'normal neotree-mode-map (kbd "n") 'neotree-next-line)
-(evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-previous-line)
 (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
 (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
 
