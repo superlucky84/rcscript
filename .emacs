@@ -137,17 +137,31 @@
   :ensure t)
 
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
-(setq-default evil-shift-width 2)
-(setq-default js-basic-offset 2)
-(setq web-mode-markup-indent-offset 2)
-(setq js-indent-level 2)
-(setq js2-basic-offset 2)
-(setq nxml-child-indent 2 nxml-attribute-indent 2)
-(setq-default typescript-indent-level 2)
-(setq-default c-basic-offset 2)
+(setq-default tab-width 4)
+(setq-default evil-shift-width 4)
+(setq-default js-basic-offset 4)
+(setq web-mode-markup-indent-offset 4)
+(setq js-indent-level 4)
+(setq js4-basic-offset 4)
+(setq nxml-child-indent 4 nxml-attribute-indent 4)
+(setq-default typescript-indent-level 4)
+(setq-default c-basic-offset 4)
 (global-linum-mode t)
 (global-set-key (kbd "C-c tn") 'linum-mode)
+
+(defun reload-dotemacs ()
+  "Reload .emacs"
+  (interactive)
+  (let (dotemacs-default)
+    (setq dotemacs-default "~/.emacs")
+    (message "Load %s" dotemacs-default)
+    (load-file dotemacs-default)
+  )
+)
+
+(global-set-key (kbd "C-c er") 'reload-dotemacs)
+
+
 
 
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
