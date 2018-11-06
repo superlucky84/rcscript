@@ -156,6 +156,8 @@
   )
 )
 
+(setq make-backup-files nil)
+
 (setq step 2)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width step)
