@@ -14,6 +14,7 @@ Plugin 'Align'
 Plugin 'grep.vim'
 Plugin 'EasyMotion'
 Plugin 'jellybeans.vim'
+Plugin 'Command-T'
 Plugin 'snipMate'
 Plugin 'Indent-Guides'
 Plugin 'prettier/vim-prettier'
@@ -23,16 +24,21 @@ Plugin 'posva/vim-vue'
 Plugin 'scrooloose/syntastic'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'sekel/vim-vue-syntastic'
-
 "Plugin 'Quramy/tsuquyomi-vue'
+
 "Plugin 'dense-analysis/ale'
 
 filetype indent plugin on
 autocmd BufNewFile,BufRead *.vue set filetype=vue
 
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'node_modules$\|dist$\|\.git$\|\.hg$\|\.svn$\|\.yardoc$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'eslint']
-"let g:syntastic_vue_checkers = ['tsuquyomi', 'eslint']
+let g:syntastic_vue_checkers = ['eslint']
 let g:syntastic_typescript_tsc_fname = ''
 
 " save change
@@ -46,7 +52,7 @@ let g:typescript_compiler_options = ''
 
 "let g:ale_completion_enabled = 1
 "let g:ale_completion_tsserver_autoimport = 1
-"let b:ale_linter_aliases = ['javascript', 'vue'] let g:ale_linter_aliases = {'vue': 'typescript'}
+"let b:ale_linter_aliases = ['javascript', 'vue'] 
 "let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tsserver', 'eslint'], 'vue': ['tsserver', 'eslint'] }
 
 
