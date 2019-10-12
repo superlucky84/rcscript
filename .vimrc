@@ -149,6 +149,7 @@ nmap <leader>pp :PrettierAsync<CR>
 nmap <leader>ee :SyntasticToggleMode<CR>
 nmap <leader>eo :TsuOpen<CR>
 nmap <leader>ec :TsuClose<CR>
+nmap <leader>ss :Grep -R<CR>
 
 "indentguide
 hi IndentGuidesOdd  guibg=darkgrey   ctermbg=3
