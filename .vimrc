@@ -145,7 +145,10 @@ nmap <leader>et2 :%s/\t/  /g<CR>
 nmap <leader>etr4 :%s/    /\t/g<CR>
 nmap <leader>etr2 :%s/  /\t/g<CR>
 
-nmap <leader>fp :PrettierAsync<CR>
+nmap <leader>pp :PrettierAsync<CR>
+nmap <leader>ee :SyntasticToggleMode<CR>
+nmap <leader>eo :TsuOpen<CR>
+nmap <leader>ec :TsuClose<CR>
 
 "indentguide
 hi IndentGuidesOdd  guibg=darkgrey   ctermbg=3
