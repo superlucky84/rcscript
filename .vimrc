@@ -9,15 +9,46 @@ Bundle 'The-NERD-tree'
 Bundle 'The-NERD-Commenter'
 Bundle 'surround.vim'
 Bundle 'AutoComplPop'
-Plugin 'Command-T'
+Plugin 'ctrlp.vim'
 Plugin 'Align'
+Plugin 'grep.vim'
 Plugin 'EasyMotion'
 Plugin 'jellybeans.vim'
 Plugin 'snipMate'
 Plugin 'Indent-Guides'
-Plugin 'isRuslan/vim-es6'
+Plugin 'prettier/vim-prettier'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'posva/vim-vue'
+
+Plugin 'scrooloose/syntastic'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'sekel/vim-vue-syntastic'
+
+"Plugin 'Quramy/tsuquyomi-vue'
+"Plugin 'dense-analysis/ale'
 
 filetype indent plugin on
+autocmd BufNewFile,BufRead *.vue set filetype=vue
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'eslint']
+"let g:syntastic_vue_checkers = ['tsuquyomi', 'eslint']
+let g:syntastic_typescript_tsc_fname = ''
+
+" save change
+"let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
+let g:typescript_indent_disable = 1
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+
+
+"let g:ale_completion_enabled = 1
+"let g:ale_completion_tsserver_autoimport = 1
+"let b:ale_linter_aliases = ['javascript', 'vue'] let g:ale_linter_aliases = {'vue': 'typescript'}
+"let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tsserver', 'eslint'], 'vue': ['tsserver', 'eslint'] }
+
 
 "gvim
 "set guioptions-=T    "툴바 숨기기
@@ -64,7 +95,6 @@ set bs=indent,eol,start
 set sol 
 set ch=1
 set km=startsel,stopsel
-set sel=exclusive
 set scs 
 set hi=1000 
 set nows
@@ -109,6 +139,7 @@ nmap <leader>et2 :%s/\t/  /g<CR>
 nmap <leader>etr4 :%s/    /\t/g<CR>
 nmap <leader>etr2 :%s/  /\t/g<CR>
 
+nmap <leader>fp :PrettierAsync<CR>
 
 "indentguide
 hi IndentGuidesOdd  guibg=darkgrey   ctermbg=3
@@ -118,8 +149,8 @@ let g:indent_guides_guide_size=1
 nmap <leader>g :IndentGuidesToggle<CR>
 
 
-let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
-let @c='iconsole.log();h'
+let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
+let @c='iconsole.log();h'
 
 
 "vim 6.*
@@ -131,4 +162,6 @@ let @c='iconsole.log();h'
 "nmap <leader>es :!.\node_modules\.bin\eslint %<CR>
 
 "unix
-nmap <leader>es :!./node_modules/.bin/eslint %<CR>
+"nmap <leader>es :!./node_modules/.bin/eslint %<CR>
+"
+
