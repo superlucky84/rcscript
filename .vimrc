@@ -11,6 +11,7 @@ Bundle 'surround.vim'
 Bundle 'AutoComplPop'
 Plugin 'ctrlp.vim'
 Plugin 'Align'
+Plugin 'pangloss/vim-javascript'
 Plugin 'grep.vim'
 Plugin 'EasyMotion'
 Plugin 'jellybeans.vim'
@@ -178,7 +179,6 @@ nmap <leader>g :IndentGuidesToggle<CR>
 
 let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
 let @c='iconsole.log();h'
-
 
 "vim 6.*
 "let g:treeExplWinSize=30
