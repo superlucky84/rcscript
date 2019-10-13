@@ -25,25 +25,26 @@ Plugin 'prettier/vim-prettier'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
 
-Plugin 'scrooloose/syntastic'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'sekel/vim-vue-syntastic'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'Quramy/tsuquyomi'
+"Plugin 'sekel/vim-vue-syntastic'
 "Plugin 'Quramy/tsuquyomi-vue'
 
-"Plugin 'dense-analysis/ale'
+Plugin 'dense-analysis/ale'
 
 filetype indent plugin on
 autocmd BufNewFile,BufRead *.vue set filetype=vue
+
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules$\|dist$\|\.git$\|\.hg$\|\.svn$\|\.yardoc$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tsuquyomi', 'eslint']
-let g:syntastic_vue_checkers = ['eslint']
-let g:syntastic_typescript_tsc_fname = ''
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_typescript_checkers = ['tsuquyomi', 'eslint']
+"let g:syntastic_vue_checkers = ['eslint']
+"let g:syntastic_typescript_tsc_fname = ''
 
 " save change
 "let g:prettier#autoformat = 0
@@ -54,10 +55,11 @@ let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 
 
-"let g:ale_completion_enabled = 1
-"let g:ale_completion_tsserver_autoimport = 1
-"let b:ale_linter_aliases = ['javascript', 'vue'] 
-"let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tsserver', 'eslint'], 'vue': ['tsserver', 'eslint'] }
+let g:ale_set_highlights = 0
+let g:ale_completion_enabled = 1
+let g:ale_completion_tsserver_autoimport = 1
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tsserver', 'eslint'], 'vue': ['eslint'] }
 
 
 " air-line
@@ -156,10 +158,14 @@ nmap <leader>etr4 :%s/    /\t/g<CR>
 nmap <leader>etr2 :%s/  /\t/g<CR>
 
 nmap <leader>pp :PrettierAsync<CR>
-nmap <leader>ee :SyntasticToggleMode<CR>
-nmap <leader>el :Errors<CR>
-nmap <leader>eo :TsuOpen<CR>
-nmap <leader>ec :TsuClose<CR>
+nmap <leader>ee :ALEToggle<CR>
+nmap <leader>ed :ALEDetail<CR>
+nmap <leader>en :ALENext<CR>
+nmap <leader>ep :ALEPrevious<CR>
+"nmap <leader>ee :SyntasticToggleMode<CR>
+"nmap <leader>el :Errors<CR>
+"nmap <leader>eo :TsuOpen<CR>
+"nmap <leader>ec :TsuClose<CR>
 nmap <leader>ss :Grep -R<CR>
 
 "indentguide
