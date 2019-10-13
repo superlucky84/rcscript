@@ -1,69 +1,70 @@
 syntax on  
 
 " for window
-"set rtp+=C:\Users\jinwoo\vim\bundle\vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'The-NERD-tree'
-Bundle 'The-NERD-Commenter'
-Bundle 'surround.vim'
-Bundle 'AutoComplPop'
-Plugin 'ctrlp.vim'
-Plugin 'Align'
-Plugin 'pangloss/vim-javascript'
-Plugin 'grep.vim'
-Plugin 'EasyMotion'
-Plugin 'jellybeans.vim'
-Plugin 'Command-T'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'schickling/vim-bufonly'
-Plugin 'snipMate'
-Plugin 'Indent-Guides'
-Plugin 'prettier/vim-prettier'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'posva/vim-vue'
+"curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'ddollar/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'easymotion/vim-easymotion'
+Plug 'nanotech/jellybeans.vim'
+Plug 'vim-scripts/grep.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'yggdroot/indentline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'schickling/vim-bufonly'
+Plug 'prettier/vim-prettier'
+Plug 'leafgarland/typescript-vim'
+Plug 'posva/vim-vue'
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 "Plugin 'scrooloose/syntastic'
 "Plugin 'Quramy/tsuquyomi'
 "Plugin 'sekel/vim-vue-syntastic'
 "Plugin 'Quramy/tsuquyomi-vue'
 
-Plugin 'dense-analysis/ale'
+"Plugin 'dense-analysis/ale'
+call plug#end()
 
 filetype indent plugin on
-autocmd BufNewFile,BufRead *.vue set filetype=vue
 
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+"autocmd FileType vue setlocal ts=2 sts=2 sw=2
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules$\|dist$\|\.git$\|\.hg$\|\.svn$\|\.yardoc$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_typescript_checkers = ['tsuquyomi', 'eslint']
-"let g:syntastic_vue_checkers = ['eslint']
-"let g:syntastic_typescript_tsc_fname = ''
-
 " save change
 "let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
-let g:typescript_indent_disable = 1
-let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
-
-
-let g:ale_set_highlights = 0
-let g:ale_completion_enabled = 1
-let g:ale_completion_tsserver_autoimport = 1
-let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
-let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tsserver', 'eslint'], 'vue': ['eslint'] }
-
-
-" air-line
+"let g:typescript_indent_disable = 1
+"let g:typescript_compiler_binary = 'tsc'
+"let g:typescript_compiler_options = ''
+"
+"
+"let g:ale_set_highlights = 0
+"let g:ale_completion_enabled = 1
+"let g:ale_completion_tsserver_autoimport = 1
+"let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+"let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tsserver', 'eslint'], 'vue': ['eslint'] }
+"
+"
+"" air-line
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme='dracula'
@@ -73,6 +74,19 @@ let g:airline_theme='dracula'
 
 "linux
 "colo black
+
+let g:indentLine_enabled = 0
+let g:indentLine_setColors = 0
+" Vim
+let g:indentLine_color_term = 239
+" GVim
+let g:indentLine_color_gui = '#A4E57E'
+" none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+" Background (Vim, GVim)
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_bgcolor_gui = '#FF5F00'
 
 "window
 set guifont=monaco:h12
@@ -159,36 +173,22 @@ nmap <leader>etr4 :%s/    /\t/g<CR>
 nmap <leader>etr2 :%s/  /\t/g<CR>
 
 nmap <leader>pp :PrettierAsync<CR>
-nmap <leader>ee :ALEToggle<CR>
-nmap <leader>ed :ALEDetail<CR>
-nmap <leader>en :ALENext<CR>
-nmap <leader>ep :ALEPrevious<CR>
+
+nmap <leader>ee :call CocAction('reloadExtension', 'coc-vetur')<CR>
+"nmap <leader>ee :ALEToggle<CR>
+"nmap <leader>ed :ALEDetail<CR>
+"nmap <leader>en :ALENext<CR>
+"nmap <leader>ep :ALEPrevious<CR>
 "nmap <leader>ee :SyntasticToggleMode<CR>
 "nmap <leader>el :Errors<CR>
 "nmap <leader>eo :TsuOpen<CR>
 "nmap <leader>ec :TsuClose<CR>
+
 nmap <leader>ss :Grep -R<CR>
 
 "indentguide
-hi IndentGuidesOdd  guibg=darkgrey   ctermbg=3
-hi IndentGuidesEven guibg=white   ctermbg=3
-let g:indent_guides_start_level=1
-let g:indent_guides_guide_size=1
-nmap <leader>g :IndentGuidesToggle<CR>
+nmap <leader>g :IndentLinesToggle<CR>
 
 
-let @p='iecho "<pre>"; print_r(); echo "</pre>";bbbbbl'
-let @c='iconsole.log();h'
-
-"vim 6.*
-"let g:treeExplWinSize=30
-"let g:treeExplVertical = 1
-"nmap <F11> :VSTreeExplore<CR>
-
-"window
-"nmap <leader>es :!.\node_modules\.bin\eslint %<CR>
-
-"unix
 "nmap <leader>es :!./node_modules/.bin/eslint %<CR>
-"
 
