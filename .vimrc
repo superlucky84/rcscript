@@ -15,6 +15,10 @@ Plugin 'grep.vim'
 Plugin 'EasyMotion'
 Plugin 'jellybeans.vim'
 Plugin 'Command-T'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'schickling/vim-bufonly'
 Plugin 'snipMate'
 Plugin 'Indent-Guides'
 Plugin 'prettier/vim-prettier'
@@ -55,6 +59,11 @@ let g:typescript_compiler_options = ''
 "let b:ale_linter_aliases = ['javascript', 'vue'] 
 "let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tsserver', 'eslint'], 'vue': ['tsserver', 'eslint'] }
 
+
+" air-line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_theme='dracula'
 
 "gvim
 "set guioptions-=T    "툴바 숨기기
@@ -121,6 +130,7 @@ set magic
 set report=0
 set autoread
 set ffs=unix,dos,mac
+set clipboard=unnamed
 
 nmap <leader>acr :AlignCtrl r<CR>
 nmap <leader>acl :AlignCtrl l<CR>
@@ -147,6 +157,7 @@ nmap <leader>etr2 :%s/  /\t/g<CR>
 
 nmap <leader>pp :PrettierAsync<CR>
 nmap <leader>ee :SyntasticToggleMode<CR>
+nmap <leader>el :Errors<CR>
 nmap <leader>eo :TsuOpen<CR>
 nmap <leader>ec :TsuClose<CR>
 nmap <leader>ss :Grep -R<CR>
