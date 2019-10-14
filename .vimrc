@@ -156,23 +156,10 @@ nmap <leader>acl :AlignCtrl l<CR>
 
 "vim 7.*
 nmap <leader>r :NERDTreeToggle<CR>
-map <F10> :set tags=/usr/local/plug/trunk/tags<CR>
-"map <Leader>t <ESC>:FufFile **/<CR>
-"map <Leader>ff <ESC>:FufFile<CR>
-"map <Leader>f <ESC>:FufFile<CR>
-"map <Leader>b <ESC>:FufBuffer<CR>
-
-
-nmap <leader>cp :set paste<CR>
-nmap <leader>np :set nopaste<CR>
+nmap <leader>t :CocCommand explorer<CR>
 
 nmap <leader>ct2 :set ts=2 sw=2 sts=2<CR>
 nmap <leader>ct4 :set ts=4 sw=4 sts=4<CR>
-
-nmap <leader>et4 :%s/\t/    /g<CR>
-nmap <leader>et2 :%s/\t/  /g<CR>
-nmap <leader>etr4 :%s/    /\t/g<CR>
-nmap <leader>etr2 :%s/  /\t/g<CR>
 
 nmap <leader>pp :PrettierAsync<CR>
 
@@ -191,7 +178,4 @@ nmap <leader>dc: CtrlPClearCache<CR>
 
 "indentguide
 nmap <leader>g :IndentLinesToggle<CR>
-
-
-"nmap <leader>es :!./node_modules/.bin/eslint %<CR>
 
