@@ -1,4 +1,4 @@
-syntax on  
+syntax on
 
 " for window
 "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -32,7 +32,9 @@ call plug#end()
 
 filetype indent plugin on
 
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+autocmd BufRead,BufNewFile *.vue setl filetype=vue
+autocmd BufRead,BufNewFile *.vue call CocAction('reloadExtension', 'coc-vetur')
+
 autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup mygroup
   autocmd!
@@ -108,7 +110,7 @@ set nocp
 set nobk
 set nu
 set vb
-set hls 
+set hls
 set ic
 set smartcase
 set ai
@@ -119,16 +121,16 @@ set sts=2
 set et
 
 set ruler
-set showcmd 
+set showcmd
 set showmatch
 set showmode
 
 set bs=indent,eol,start
-set sol 
+set sol
 set ch=1
 set km=startsel,stopsel
-set scs 
-set hi=1000 
+set scs
+set hi=1000
 set nows
 set sm
 set scrolloff=2
@@ -185,6 +187,7 @@ nmap <leader>ee :call CocAction('reloadExtension', 'coc-vetur')<CR>
 "nmap <leader>ec :TsuClose<CR>
 
 nmap <leader>ss :Grep -R<CR>
+nmap <leader>dc: CtrlPClearCache<CR>
 
 "indentguide
 nmap <leader>g :IndentLinesToggle<CR>
