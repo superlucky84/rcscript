@@ -58,7 +58,13 @@ autocmd VimEnter *
                 \ |   wincmd w
                 \ | endif
 
-
+let g:startify_custom_header = [
+      \'       _                         _     _   ',
+      \'      |_|___ _ _ ___ ___ ___ ___|_|___| |_ ,',
+      \'      | | .`| | | .`|_ -|  _|  _| | . |  _|',
+      \'     _| |__,|\_/|__,|___|___|_| |_|  _|_|  ',
+      \'    |___|                         |_|      '
+      \]
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules$\|dist$\|\.git$\|\.hg$\|\.svn$\|\.yardoc$',
@@ -137,7 +143,7 @@ let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
 " NERDTREE
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
-"let g:NERDTreeWinPos = 'rightbelow'
+let g:NERDTreeWinPos = 'rightbelow'
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 let g:NERDTreeStatusline = ''
 
@@ -212,3 +218,21 @@ nmap <leader>g :IndentLinesToggle<CR>
 " brew cask install font-hack-nerd-font
 " Non-ASC2 FONT 13pt Hack Regular Nerd Font Complete
 
+"{
+"  "suggest.maxCompleteItemCount": 20,
+"  "eslint.filetypes": [
+"    "javascript",
+"    "typescript",
+"    "typescriptreact",
+"    "javascriptreact",
+"    "vue"
+"  ],
+"  "diagnostic.infoSign": "ღ",
+"  "diagnostic.hintSign": "ஐ",
+"  "diagnostic.warningSign": "⚠",
+"  "diagnostic.errorSign": "✖",
+"  "diagnostic.enable": true,
+"  "diagnostic.signOffset": 9999999,
+"  "diagnostic.highlightOffset": 9999999,
+"  "diagnostic.refreshOnInsertMode": true
+"}
