@@ -141,6 +141,7 @@ let g:DevIconsEnableFolderExtensionPatternMatching = 1
 let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
 
 " NERDTREE
+let NERDTreeShowBookmarks=1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeWinPos = 'rightbelow'
