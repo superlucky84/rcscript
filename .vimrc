@@ -29,6 +29,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'vim-scripts/grep.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'yggdroot/indentline'
+Plug 'shime/vim-livedown'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
@@ -204,6 +205,7 @@ nmap <leader>ee :call CocAction('reloadExtension', 'coc-vetur')<CR>
 nmap <leader>ss :Grep -R<CR>
 nmap <leader>dc :CtrlPClearCache<CR>
 nmap <leader>g :IndentLinesToggle<CR>
+nmap <leader>ld :LivedownToggle<CR>
 
 "nmap <leader>ee :ALEToggle<CR>
 "nmap <leader>ed :ALEDetail<CR>
@@ -218,6 +220,7 @@ nmap <leader>g :IndentLinesToggle<CR>
 " brew tap homebrew/cask-fonts
 " brew cask install font-hack-nerd-font
 " Non-ASC2 FONT 13pt Hack Regular Nerd Font Complete
+" npm install -g livedown
 
 "{
 "  "suggest.maxCompleteItemCount": 20,
