@@ -216,7 +216,7 @@ nmap <leader>ss :Grep -R<CR>
 nmap <leader>dc :CtrlPClearCache<CR>
 nmap <leader>g :IndentLinesToggle<CR>
 nmap <leader>ld :LivedownToggle<CR>
-nmap <leader>bb :call ToggleBufferLine()<CR>
+nmap <leader>b :call ToggleBufferLine()<CR>
 
 
 "nmap <leader>ee :ALEToggle<CR>
