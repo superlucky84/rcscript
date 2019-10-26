@@ -1,8 +1,8 @@
 " vim-plug auto setup
 " NEO VIM
-let plugpath = expand('<sfile>:p:h'). '/autoload/plug.vim' 
+"let plugpath = expand('<sfile>:p:h'). '/autoload/plug.vim' 
 " VIM8
-"let plugpath = expand('<sfile>:p:h'). '/.vim/autoload/plug.vim'
+let plugpath = expand('<sfile>:p:h'). '/.vim/autoload/plug.vim'
 if !filereadable(plugpath)
     if executable('curl')
         let plugurl = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -52,12 +52,12 @@ syntax on
 "autocmd FileType vue setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile *.vue setl filetype=vue
 autocmd BufRead,BufNewFile *.vue call CocAction('reloadExtension', 'coc-vetur')
-autocmd VimEnter *
-                \   if !argc()
-                \ |   Startify
-                \ |   NERDTree
-                \ |   wincmd w
-                \ | endif
+"autocmd VimEnter *
+"                \   if !argc()
+"                \ |   Startify
+"                \ |   NERDTree
+"                \ |   wincmd w
+"                \ | endif
 
 let g:startify_custom_header = [
       \'       _                         _     _   ',
@@ -100,7 +100,7 @@ let g:coc_global_extensions = [
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='dracula'
+let g:airline_theme = 'dracula'
 
 " GVIM AT
 "set guioptions-=T    "툴바 숨기기
@@ -118,6 +118,18 @@ let g:indentLine_color_dark = 1 " (default: 2)
 " Background (Vim, GVim)
 let g:indentLine_bgcolor_term = 202
 let g:indentLine_bgcolor_gui = '#FF5F00'
+
+let s:hidden_all = 1
+function! ToggleBufferLine()
+  if s:hidden_all == 1
+    let s:hidden_all = 0
+    set showtabline=0
+  else
+    let s:hidden_all = 1
+    set showtabline=2
+  endif
+endfunction
+
 
 
 " VIM-DEVICONS
@@ -145,9 +157,10 @@ let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
 let NERDTreeShowBookmarks=1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeWinPos = 'rightbelow'
+"let g:NERDTreeWinPos = 'rightbelow'
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 let g:NERDTreeStatusline = ''
+
 
 
 colo jellybeans
@@ -168,12 +181,10 @@ set ts=2
 set sw=2
 set sts=2
 set et
-
 set ruler
 set showcmd
 set showmatch
 set showmode
-
 set bs=indent,eol,start
 set sol
 set ch=1
@@ -189,7 +200,6 @@ set fencs=utf8,cp949
 set exrc
 set mousehide
 set foldmethod=manual
-
 set magic
 set report=0
 set autoread
@@ -206,6 +216,8 @@ nmap <leader>ss :Grep -R<CR>
 nmap <leader>dc :CtrlPClearCache<CR>
 nmap <leader>g :IndentLinesToggle<CR>
 nmap <leader>ld :LivedownToggle<CR>
+nmap <leader>bb :call ToggleBufferLine()<CR>
+
 
 "nmap <leader>ee :ALEToggle<CR>
 "nmap <leader>ed :ALEDetail<CR>
