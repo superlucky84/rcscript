@@ -212,6 +212,7 @@ nmap <leader>r :NERDTreeToggle<CR>
 nmap <leader>t :CocCommand explorer<CR>
 nmap <leader>pp :PrettierAsync<CR>
 nmap <leader>ee :call CocAction('reloadExtension', 'coc-vetur')<CR>
+nmap <leader>jj :call CocAction('jumpDefinition')<CR>
 nmap <leader>ss :Grep -R<CR>
 nmap <leader>dc :CtrlPClearCache<CR>
 nmap <leader>g :IndentLinesToggle<CR>
