@@ -50,8 +50,8 @@ filetype indent plugin on
 syntax on
 
 "autocmd FileType vue setlocal ts=2 sts=2 sw=2
-autocmd BufRead,BufNewFile *.vue setl filetype=vue
-autocmd BufRead,BufNewFile *.vue call CocAction('reloadExtension', 'coc-vetur')
+"autocmd BufRead,BufNewFile *.vue setl filetype=vue
+"autocmd BufRead,BufNewFile *.vue call CocAction('reloadExtension', 'coc-vetur')
 "autocmd VimEnter *
 "                \   if !argc()
 "                \ |   Startify
@@ -247,8 +247,6 @@ nmap <leader>b :call ToggleBufferLine()<CR>
 "  "diagnostic.hintSign": "ஐ",
 "  "diagnostic.warningSign": "⚠",
 "  "diagnostic.errorSign": "✖",
-"  "diagnostic.enable": true,
 "  "diagnostic.signOffset": 9999999,
-"  "diagnostic.highlightOffset": 9999999,
-"  "diagnostic.refreshOnInsertMode": true
+"  "diagnostic.highlightOffset": 9999999
 "}
