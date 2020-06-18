@@ -244,6 +244,7 @@ nmap <leader>b :call ToggleBufferLine()<CR>
 "    "javascriptreact",
 "    "vue"
 "  ],
+"  "eslint.nodePath": "/Users/nhnent/project/wce/node_modules",
 "  "diagnostic.infoSign": "ღ",
 "  "diagnostic.hintSign": "ஐ",
 "  "diagnostic.warningSign": "⚠",
