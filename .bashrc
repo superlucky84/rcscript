@@ -31,6 +31,7 @@ alias colorslist="set | egrep 'COLOR_\w*'"  # lists all the colors
 #Prompt
 #export PS1="${COLOR_GREEN}\w$ ${COLOR_NC}"
 export PS1="\w$ "
+#PROMPT='%F{cyan}%~ %f'
  
 # Alias
 alias ls='ls -G'
