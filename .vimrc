@@ -74,6 +74,7 @@ let g:ctrlp_custom_ignore = {
 
 let g:coc_global_extensions = [
             \ "coc-eslint",
+            \ "coc-stylelint",
             \ "coc-tsserver",
             \ "coc-vetur",
             \ "coc-explorer",
