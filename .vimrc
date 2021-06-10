@@ -36,6 +36,7 @@ Plug 'mhinz/vim-startify'
 Plug 'schickling/vim-bufonly'
 Plug 'prettier/vim-prettier'
 Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'posva/vim-vue'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
