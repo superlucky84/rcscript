@@ -214,6 +214,7 @@ nmap <leader>ct4 :set ts=4 sw=4 sts=4<CR>
 nmap <leader>r :NERDTreeToggle<CR>
 nmap <leader>t :CocCommand explorer<CR>
 nmap <leader>pp :PrettierAsync<CR>
+nmap <leader>af :CocCommand eslint.executeAutofix<CR>
 nmap <leader>ee :call CocAction('reloadExtension', 'coc-vetur')<CR>
 nmap <leader>jj :call CocAction('jumpDefinition')<CR>
 nmap <leader>ss :Grep -R --exclude-dir=node_modules<CR>
