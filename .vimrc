@@ -73,6 +73,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
+let g:ctrlp_cmd='CtrlP :pwd'
+
 let g:coc_global_extensions = [
             \ "coc-eslint",
             \ "coc-stylelint",
