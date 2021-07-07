@@ -247,6 +247,5 @@ nmap <leader>b :call ToggleBufferLine()<CR>
 "  "diagnostic.hintSign": "ஐ",
 "  "diagnostic.warningSign": "⚠",
 "  "diagnostic.errorSign": "✖",
-"  "diagnostic.signOffset": 9999999,
 "  "diagnostic.highlightOffset": 9999999
 "}
